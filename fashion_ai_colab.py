@@ -15,7 +15,7 @@ import torch
 import torch.nn.functional as F
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from pyngrok import ngrok
+#from pyngrok import ngrok
 from sklearn.metrics.pairwise import cosine_similarity
 
 # ── ML Models ─────────────────────────────────────────────
@@ -514,15 +514,11 @@ def search_items_endpoint():
 # START
 # ============================================================
 if __name__ == '__main__':
-    NGROK_AUTH_TOKEN = "YOUR_NGROK_AUTH_TOKEN_HERE"   # ← replace
-    ngrok.set_auth_token(NGROK_AUTH_TOKEN)
-    public_url = ngrok.connect(5000)
     print(f"\n{'='*65}")
-    print(f"🚀 FASHION AI BACKEND RUNNING")
-    print(f"🌐 Public URL : {public_url}")
-    print(f"📋 .env       : REACT_APP_API_URL={public_url}")
-    print(f"🧠 Models     : CLIP ViT-L/14  |  ViT-base  |  SBERT mpnet")
-    print(f"👗 Items      : {len(ALL_ITEMS):,}")
-    print(f"🎨 Archetypes : {len(OUTFIT_ARCHETYPES)}")
+    print(f"  FASHION AI BACKEND RUNNING")
+    print(f"  Local URL  : http://localhost:5000")
+    print(f"  Models     : CLIP ViT-L/14 | ViT-base | SBERT mpnet")
+    print(f"  Items      : {len(ALL_ITEMS):,}")
+    print(f"  Archetypes : {len(OUTFIT_ARCHETYPES)}")
     print(f"{'='*65}\n")
-    app.run(port=5000, debug=False, use_reloader=False)
+    app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)
