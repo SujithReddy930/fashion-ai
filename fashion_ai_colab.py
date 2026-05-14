@@ -521,4 +521,6 @@ if __name__ == '__main__':
     print(f"  Items      : {len(ALL_ITEMS):,}")
     print(f"  Archetypes : {len(OUTFIT_ARCHETYPES)}")
     print(f"{'='*65}\n")
-    app.run(host='0.0.0.0', port=5000, debug=False, use_reloader=False)
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=False, use_reloader=False)
