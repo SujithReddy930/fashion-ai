@@ -7,3 +7,6 @@ Frontend
 cd fashion-ai/frontend
 npm install
 npm start
+
+huggung face token
+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
