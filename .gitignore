@@ -6,3 +6,7 @@ node_modules/
 frontend/build/
 *.zip
 *.egg-info/
+node_modules/
+frontend/node_modules/
+frontend/.cache/
+frontend/node_modules/.cache/
